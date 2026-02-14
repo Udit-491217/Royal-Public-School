@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Public School |  Student Dashboard</title>
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login-common.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Login Section -->
+<section id="login-section" class="login-section">
+  <h1>Student Dashboard Login</h1>
+
+  <form id="login-form" autocomplete="off" novalidate>
+    <label for="studentId">Student ID</label>
+    <input
+      type="text"
+      id="studentId"
+      name="studentId"
+      required
+      placeholder="Enter your Student ID"
+    />
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      required
+      placeholder="Enter your password"
+    />
+
+    <button type="submit" class="btn primary-btn">Login</button>
+  </form>
+
+  <p id="login-error" class="login-error" hidden></p>
+</section>
+
+  <!-- Dashboard Section (hidden by default, shown after login) -->
+  <section id="dashboard-section" class="dashboard-section" hidden>
+
+    <header class="dashboard-header">
+      <h2>Hello, <span id="student-name">Student</span></h2>
+      <button id="logout-btn" class="btn logout-btn" aria-label="Logout">Logout</button>
+    </header>
+
+    <div class="kpi-cards">
+      <div class="kpi-card">
+        <h3>Overall Percentage</h3>
+        <p id="overall-percentage">-</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Best Subject</h3>
+        <p id="best-subject">-</p>
+      </div>
+      <div class="kpi-card">
+        <h3>Needs Improvement</h3>
+        <p id="needs-improvement">-</p>
+      </div>
+    </div>
+
+    <section class="exam-records">
+      <h3>Tests & Exams</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Exam</th>
+            <th>Subject</th>
+            <th>Marks Obtained</th>
+            <th>Max Marks</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody id="exam-table-body">
+          <!-- Dynamically filled -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="profile-info">
+      <h3>Profile Details</h3>
+      <ul>
+        <li><strong>Name:</strong> <span id="student-name-footer"></span></li>
+        <li><strong>Class:</strong> <span id="student-class"></span></li>
+        <li><strong>Parent Name:</strong> <span id="parent-name"></span></li>
+        <li><strong>Phone:</strong> <span id="phone"></span></li>
+        <li><strong>Academic Year:</strong> <span id="academic-year"></span></li>
+        <li><strong>Student ID:</strong> <span id="student-id-display"></span></li>
+      </ul>
+    </section>
+
+  </section>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
